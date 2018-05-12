@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!-- Name: James LoForti 
+	 UVID: 10675175
+     Course: Web Programming 1
+     Instructor: Dr. Brian Durney
+     Date: 12/11/2015
+     Final Project
+
+	 I declare that the following code was written by me unless otherwise stated. 
+	 I understand that copying source code from any other source constitutes cheating, 
+	 and that I will receive a zero on this project if I am found in violation of this policy.
+	 *************************************************************************** -->
+	 
+	 <head>
+		 <meta charset="UTF-8">
+		 <meta name="James LoForti" content="Calendar Description">
+		 <title>Documentation</title>
+		 <link rel="stylesheet" href="original_grid.css"></link>
+		 <style>
+			html, body {
+			background-color:#425563;
+			width:100%;
+			height:100%;
+			}
+		 </style>
+	 </head>
+
+	 <body> <!-- **************************************************************** -->
+	
+	 <div class="d_header">
+		 <!-- <img id="design_logo" src="Images/calendar.png" alt="Calendar Description Logo - coppellchamber.org" style="width:222px;height:172px;"></img> -->
+		 <h1 id="cd_title" style="font-family:helvetica, serif;text-align:center">Documentation</h1>
+	 </div>	
+	 
+	 <span>
+	 </span>
+
+	 <table class="objective_table">
+		 <tr class="objective_table_header">
+			<th style="border:2px solid black;color:red">Objective</th>
+			<th style="border:2px solid black;color:green">Fulfillment</th>
+		 </tr>
+		 <tr class="ob_table_row">
+			 <td class="ob_table_data1">Game Grid via JS w/ CSS</td>
+			 <td class="ob_table_data2">My Game grid is displayed on the "game_grid_js.html" page.  It is generated via JavaScript in the "view.js" file in a function called, 
+										"createCalendar()".  The CSS for this grid can be found in "project.css".</td>
+		 </tr>
+		 <tr class="ob_table_row">
+			 <td class="ob_table_data1">User Input: text, select, buttons</td>
+			 <td class="ob_table_data2">When the user clicks on a given day, then clicks the "New Task" button located on the day div, it displays another div which allows for 
+										user input via text and select
+										options.  Buttons are used throughout this sequence of events.  A similar process is found when the user hits the "Add" button on the 
+										employee key div located to the left of the calendar.</td>
+		 </tr>
+		 <tr class="ob_table_row">
+			 <td class="ob_table_data1">User Input: mouse clicks</td>
+			 <td class="ob_table_data2">The user gives input everytime they click on the desired day.  Also, the last/next month buttons, which allows the user to navigate to
+										the desired month, is based on a mouse click event.</td>
+		 </tr>
+		 <tr class="ob_table_row">
+			 <td class="ob_table_data1">Dynamic Modification of HTML</td>
+			 <td class="ob_table_data2">There are many instances of dynamic HTML modification, but one of the more obvious cases can be found by clicking the "Add" button on 
+										the employee key, then completing the "New Employee" form and clicking the save button.  This causes the user given data to be 
+										made into an Employee object, which is then injected into the existing
+										list of employees.</td>
+		 </tr>
+		 <tr class="ob_table_row">
+			 <td class="ob_table_data1">XML</td>
+			 <td class="ob_table_data2">The XML can be found in the calendar as italicized, grey text.  The data is pulled from XML tags in the "maintenanceSchedule.xml" file.
+										The implementation of this xml is found in the "view.js" file in a function called, "getXML()".</td>
+		 </tr>
+		 <tr class="ob_table_row">
+			 <td class="ob_table_data1">HTML 5</td>
+			 <td class="ob_table_data2">Internal Storage is used to save the data from the calendar, so the user can retain previously given data even if the application is closed.
+										The logic for internal storage use can be found in the "model.js" file, in functions: "getLocalStorage()", "stringToArray()", 
+										"saveDataToLocalStorage()", "arrayToString()", "clearDataFromLocalStorage()".  This process was quite challenging because I had to convert
+										a 4D array with complex objects at two different levels, into a string and back to its original form :)</td>
+		 </tr>
+		 <tr class="ob_table_row">
+			 <td class="ob_table_data1">Game Logic</td>
+			 <td class="ob_table_data2">There is so much logic involved so I will list the primary functions: When the page first loads the current DateTime is generated, which is 
+										then used to calculate the number of days in the month, the day div headers, the main calendar title, etc.  A Month object is generated which
+										contains the month name, year, and a 3D data structure for that particular month;  User clicks the last/next month
+										buttons which repeats the previous process; User clicks on any given day which displays day div, pulls data from the data structure,
+										and populates the day div; User clicks on "New Task" button which displays the "New Task" div, allowing the user to give input and create a task; 
+										The user clicks the "New Task" save button which creates a task object, adds it to the primary data structure, then repopulates the day div task list;
+										User clicks the "Add" button in the employee div which opens the "New Employee" div;  Again, the "New Employee" div allows for user input
+										and creates an Employee object, which is then appended to the employee div.</td>
+		 </tr>
+		 <tr class="ob_table_row">
+			 <td class="ob_table_data1">HTML 5 EXTRA CREDIT</td>
+			 <td class="ob_table_data2">Since I already took a considerable amount of time to implement the local storage functionality, I decided to add a little audio
+										to satisfy the extra HTML 5 media element.  When the user creates a new task, and saves it, a ding sounds to inform the user that their task		
+										was saved.  In addition, when the user clicks the big red button to the right of the calendar which clears all the local storage, a 
+										sinister laugh sounds to inform the user the clearing of local storage was completed.</td>
+		 </tr>
+	 </table>
+	
+	
+	
+	 </body> <!-- **************************************************************** -->
+</html>

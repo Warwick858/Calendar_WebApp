@@ -1,0 +1,770 @@
+/* 	 Name: James LoForti 
+	 UVID: 10675175
+     Course: Web Programming 1
+     Instructor: Dr. Brian Durney
+     Date: 12/11/2015
+     Final Project
+
+	 I declare that the following code was written by me unless otherwise stated. 
+	 I understand that copying source code from any other source constitutes cheating, 
+	 and that I will receive a zero on this project if I am found in violation of this policy.
+     *************************************************************************** -->
+	 
+	 /* ********************************************* Game_Grid ********************************************* */
+	 /* **************************************** Header ******************************************* */
+	 div.header{
+		 display:block;
+		 position:relative;
+		 margin:auto;
+		 padding:0px 0px 20px 0px;
+		 width:100%;
+		 font-family:"Helvetica", serif;
+		 font-weight:bold;
+		 color:white;
+	 }
+	 
+	 .title h1{
+		 display:block;
+		 position:relative;
+		 margin:auto;
+		 padding:0px;
+		 width:30%;
+		 height:30%;
+		 text-align:center;
+		 text-shadow:-1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000; /* EXCEPTION: Example taken from online tutorial, but slightly altered ;) */
+	 }
+	 
+	 #main_calendar_header{
+		 
+	 }
+	 
+	 #left_willy{
+		 float:left;
+	 }
+	 
+	 #right_willy{
+		 float:right;
+	 }
+	 
+	 #prev_arrow_header{
+		 display:block;
+		 position:absolute;
+		 left:0px;
+		 text-align:right;
+		 padding:5px 10px 0px 10px;
+		 width:40px;
+		 height:40px; 
+	 }
+	 
+	 #prev_arrow{
+		 display:block;
+		 position:absolute;
+		 left:0px;
+		 padding:5px 10px 5px 65px;
+	 }
+	 
+	 #next_arrow{
+		 display:block;
+		 position:absolute;
+		 right:0px;
+		 padding:5px 65px 5px 10px;
+	 }
+	 
+	 #next_arrow_header{
+		 display:block;
+		 position:absolute;
+		 right:0px;
+		 text-align:right;
+		 padding:5px 15px 0px 10px;
+ 		 width: 40px;
+		 height:40px;
+	 }
+	 /* **************************************** Header ******************************************* */
+	 /* ************************************** Employee Key *************************************** */
+	 
+	 .employee_key_div{
+		 position:absolute;
+		 top:106px;
+		 width:200px;
+		 margin:0px 0px 0px 15px;
+		 padding:0px 0px 10px 0px;
+		 border:3px solid black;
+		 box-shadow:5px 5px 5px #888888;
+		 background-color:white;
+		 font-family:Helvetica, serif;
+		 text-align:center;
+	 }
+	 
+	 .employee_key_header{
+		 display:block;
+		 margin:0px 0px 5px 0px;
+		 border-bottom:3px solid black;
+		 background-color:yellow;
+		 font-size:160%;
+		 font-weight:bold;
+		 text-align:center;
+		 font-family:Helvetica, serif;
+	 }
+	 
+	 .employee_key_span{
+		 position:static;
+		 display:block;
+		 left:0px;
+		 width:166px;
+		 margin:0px 0px 0px 0px;
+		 padding:0px 0px 0px 0px;
+		 font-size:90%;
+		 font-weight:bold;
+	 }
+	 
+	 .add_employee_button{
+		 position:relative;
+		 display:block;
+		 width:80px;
+		 height:30px;
+		 left:60px;
+		 margin:5px;
+		 border:1px solid black;
+		 background-color:blue;
+		 font-size:large;
+		 font-weight:bold;
+		 cursor:pointer;
+	 }
+	 
+	 .delete_employee_button{
+		 position:relative;
+		 display:block;
+		 width:80px;
+		 height:30px;
+		 left:60px;
+		 margin:5px;
+		 border:1px solid black;
+		 background-color:red;
+		 font-size:large;
+		 font-weight:bold;
+		 cursor:pointer;
+	 }
+	 /* ************************************** Employee Key *************************************** */
+	 /* *********************************** New Employee Form ************************************* */
+	 
+	 .new_employee_div{
+		 position:absolute;
+		 display:inline;
+		 z-index:5;
+		 top:210px;
+		 left:300px;
+		 width:285px;
+		 height:160px; 
+		 margin:0px 0px 0px 15px;
+		 padding:0px 0px 10px 0px;
+		 border:2px solid black;
+		 border-radius:24px 24px 0px 0px;
+		 box-shadow:5px 5px 5px #888888;
+		 background-color:white;
+		 font-family:Helvetica, serif;
+	 }
+	 
+	 .new_employee_header{
+		 display:block;
+		 margin:0px 0px 5px 0px;
+		 border-bottom: 2px solid black;
+		 border-radius:24px 24px 0px 0px;
+		 background-color:yellow;
+		 text-align:center;
+		 font-weight:bold;
+		 font-size:140%;
+	 }
+	 
+	 .new_employee_content{
+		 margin:0px 0px 0px 28px;
+		 padding:0px;
+		 font-size:130%;
+		 list-style-type:square;
+		 line-height:200%;
+		 font-family:Helvetica, serif;
+	 }
+	 /* *********************************** New Employee Form ************************************* */
+
+	 .delete_data_button{
+		 position:absolute;
+		 display:inline;
+		 width:150px;
+		 height:80px;
+		 top:101px;
+		 left:2180px;
+		 margin:5px;
+		 border:3px solid black;
+		 box-shadow:5px 5px 5px #888888;
+		 background-color:red;
+		 font-family:Helvetica, serif;
+		 text-align:center;
+		 font-size:large;
+		 font-weight:bold;
+		 cursor:pointer;
+	 }
+	 
+	 /* ************************************* Main Calendar *************************************** */
+	 .calendar{
+		 position:relative;
+		 width:80%;
+		 margin:auto;
+ 		 table-layout:fixed;
+		 background-color:white;
+		 border:3px solid black;
+ 		 border-collapse:collapse;
+		 font-family:Helvetica, serif;
+	 }
+		 
+	 .table-headers{
+		 line-height:30px;
+		 text-align:center;
+		 font-weight:bold;
+		 border:2px solid black;
+	 }
+	 
+	 tr{
+		 line-height:30px;
+	 }
+	 
+	 td{
+ 		 border-style:solid;
+		 border-width:2px;
+		 text-align:left;
+	 }
+	
+	 .date{
+		 margin:0px 65px 0px 0px;
+		 vertical-align:100px;
+		 font-weight:bold;
+		 line-height:5px;
+	 }
+	 
+	 .daily_tasks{
+ 		 display:table-cell;
+		 color:#7a9a01;
+	 }
+	 
+	 .central_cell_div{
+		 position:relative;
+		 display:block;
+		 width:250px;
+		 height:130px;
+		 margin:5px 0px 5px 0px;
+		 line-height:20px;
+		 text-align:center;
+		 font-style:italic;
+		 color:grey;
+	 }
+	 
+	 .task_span{
+		 position:relative;
+		 display:block;
+		 left:75px;
+		 bottom:0px;
+		 width:75px;
+		 height:30px;
+		 text-align:center;
+	 }
+	 /* ************************************* Main Calendar *************************************** */
+	 /* **************************************** Day Div ****************************************** */
+
+	 .dayDiv{
+		 position:absolute;
+		 left:951px;
+		 top:-600px;
+		 width:480px;
+		 padding:0px 0px 10px 0px;
+		 border:2px solid black;
+		 border-radius:25px 25px 0px 0px;
+		 box-shadow:5px 5px 5px #888888;
+		 background-color:white;
+		 font-family:Helvetica, serif;
+	 }
+	 
+	 .div_headers{
+		 display:block;
+		 margin:0px 0px 5px 0px;
+		 border-bottom:2px solid black;
+		 border-radius:24px 24px 0px 0px;
+		 background-color:#f1b828;
+		 font-size:160%;
+		 font-weight:bold;
+		 text-align:center;
+		 font-family:Helvetica, serif;
+	 }
+	 
+	 .new_task_btn{
+		 position:relative;
+		 display:inline;
+		 width:80px;
+		 height:25px;
+		 top:0px;
+		 left:190px;
+		 margin:10px;
+		 border:1px solid black;
+		 background-color:#00bfff;
+		 font-weight:bold;
+		 font-family:Helvetica, serif;
+		 cursor:pointer;
+	 }
+	 
+	 .delete_btn{
+		 position:relative;
+		 display:inline;
+		 width:80px;
+		 height:25px;
+		 left:5px;
+		 margin:10px;
+		 border:1px solid black;
+		 background-color:red;
+		 font-size:large;
+		 font-weight:bold;
+		 font-family:Helvetica, serif;
+		 cursor:pointer;
+	 }
+	 
+	 .okay_btn{
+		 position:relative;
+		 display:inline;
+		 width:80px;
+		 height:25px;
+		 left:276px;
+		 margin:10px;
+		 border:1px solid black;
+		 background-color:green;
+		 font-size:large;
+		 font-weight:bold;
+		 font-family:Helvetica, serif;
+		 cursor:pointer;
+	 }
+	 
+	 /* *************************************** Day Div ****************************************** */
+	 /* ************************************** Task Form ****************************************** */
+	 
+	 .new_task_div{
+		 position:absolute;
+		 margin:0px;
+		 padding:0px 0px 10px 0px;
+		 width:380px;
+		 border:2px solid black;
+		 border-radius:25px 25px 0px 0px;
+		 box-shadow:5px 5px 5px #888888;
+		 background-color:white;
+	 }
+	 
+	 .new_task_content{
+		 margin:0px 5px 0px 28px;
+		 padding:0px;
+		 font-size:130%;
+		 list-style-type:square;
+		 line-height:200%;
+		 font-family:Helvetica, serif;
+	 }
+	 
+	 .save_btn{
+		 position:relative;
+		 display:inline;
+		 width:80px;
+		 height:25px;
+		 left:176px;
+		 margin:10px;
+		 border:1px solid black;
+		 background-color:green;
+		 font-size:large;
+		 font-weight:bold;
+		 font-family:Helvetica, serif;
+		 cursor:pointer;
+	 }
+	 /* ************************************** Task Form ****************************************** */
+	 /* ************************************** Last Login ****************************************** */
+	 
+	 .last_login_div{
+		 display:inline;
+		 position:absolute;
+		 left:2170px;
+		 top:101px;
+		 width:200px;
+		 height:200px;
+		 padding:0px 0px 10px 0px;
+		 border:2px solid black;
+		 border-radius:25px 25px 0px 0px;
+		 box-shadow:5px 5px 5px #888888;
+		 background-color:white;
+		 font-family:Helvetica, serif;
+	 }
+	 
+	 .last_login_header{
+		 display:block;
+		 margin:0px 0px 5px 0px;
+		 border-bottom:2px solid black;
+		 border-radius:24px 24px 0px 0px;
+		 background-color:#00ff00;
+		 font-size:160%;
+		 font-weight:bold;
+		 text-align:center;
+		 font-family:Helvetica, serif;
+	 }
+	 
+	 .last_login_span{
+		 position:relative;
+		 display:block;
+		 height:120px;
+		 margin:15px 10px 5px 10px;
+		 font-size:120%;
+		 font-weight:bold;
+		 text-align:center;
+		 font-family:Helvetica, serif;
+		 color:black;
+	 }
+	 
+	 .clear_btn{
+		 position:relative;
+		 display:inline;
+		 width:110px;
+		 height:25px;
+		 top:0px;
+		 left:45px;
+		 border:1px solid black;
+		 background-color:red;
+		 font-size:large;
+		 font-weight:bold;
+		 font-family:Helvetica, serif;
+		 cursor:pointer;
+	 }
+	 /* ************************************** Last Login ****************************************** */
+	 
+	 /* ********************************************* Game_Grid - END ********************************************* */
+	 /* ********************************************* Software_Design ********************************************* */
+	 
+	 /* **************************************** Header ******************************************* */
+	 .sd_header{
+		 display:inline;
+		 position:relative;
+		 margin:0px 0px 0px 0px;
+		 padding:0px 0px 20px 0px;
+		 float:left;
+		 width:100%;
+		 height: 50%;
+		 font-family:"Copperplate Gothic Light", serif;
+		 font-weight:bold;
+		 color:white;
+		 text-align:center;
+		 text-shadow:-1.5px -1.5px 0 #0000ff, 1.5px -1.5px 0 #0000ff, -1.5px 1.5px 0 #0000ff, 1.5px 1.5px 0 #0000ff; /* EXCEPTION: Example taken from online tutorial, but slightly altered ;) */
+		 background-color:black;
+	 }
+	 
+	 #design_logo{
+		 display:inline;
+		 position:relative;
+		 margin:5px 10px 0px 40px;
+		 float:left;
+	 }
+	 
+	 h1#sd_title{
+		 display:inline;
+		 margin:50px 10px 10px 40px;
+		 padding:100px 0px 0px 0px;
+		 width: 150%;
+		 height:150%;
+		 vertical-align:-118px;
+		 font-size:500%;
+		 font-weight:bold;
+		 font-style:italic;
+	 }
+	 /* **************************************** Header ******************************************* */
+	 
+	 #sd_content{
+		 position:relative;
+		 margin:0px 390px 10px 390px;
+		 padding: 250px 100px 50px 100px;
+		 font-family:"Helvetica", serif;
+		 font-size:150%;
+		 color:white;
+	 }
+	 
+	 #sd_synopsis_title{
+		 color:black;
+		 font-weight:bold;
+		 font-size:200%;
+	 }
+	 
+	 span.sd_list_titles{
+		 padding:0px 0px 0px 100px;
+		 text-align:center;
+		 width:800px;
+		 font-weight:bold;
+		 font-size:60px;
+		 color:black;
+		 list-style:none;
+		 text-shadow:-1.5px -1.5px 0 green, 1.5px -1.5px 0 green, -1.5px 1.5px 0 green, 1.5px 1.5px 0 green; /* EXCEPTION: Example taken from online tutorial, but slightly altered ;) */
+	 }
+	 
+	 .sd_list{
+		 line-height:150%;
+	 }
+	 
+	 #disclaimer{
+		 color:black;
+		 text-align:center;
+	 }
+	
+	 /* ****************************************** Software_Design END ******************************************** */
+	 /* ****************************************** Calendar Description ******************************************* */
+	 
+	 /* **************************************** Header ******************************************* */
+	 .cd_header{
+		 display:block;
+		 position:relative;
+		 margin:0px 0px 0px 0px;
+		 padding:0px 0px 0px 0px;
+		 float:left;
+		 width:100%;
+		 height:200px;
+		 font-family:"Copperplate Gothic Light", serif;
+		 font-weight:bold;
+		 color:white;
+		 text-align:center;
+		 text-shadow:-1.5px -1.5px 0 #0000ff, 1.5px -1.5px 0 #0000ff, -1.5px 1.5px 0 #0000ff, 1.5px 1.5px 0 #0000ff; /* EXCEPTION: Example taken from online tutorial, but slightly altered ;) */
+		 background-color:black;
+	 }
+	 
+	 #design_logo{
+		 display:inline;
+		 position:relative;
+		 margin:5px 0px 0px 40px;
+		 float:left;
+	 }
+	 
+	 h1#cd_title{
+		 display:inline;
+		 position:absolute;
+		 margin:50px 10px 40px 0px;
+		 /* padding:150px 0px 0px 0px; */
+		 left:450px;
+		 width:50%;
+		 height:110%;
+		 z-index:2;
+		 vertical-align:-90px;
+		 font-size:600%;
+		 font-weight:bold;
+		 font-style:italic;
+	 }
+	 /* **************************************** Header ******************************************* */
+	 /* ********************************* User Authentication ************************************* */
+	 
+	 .authentication_div{
+		 position:absolute;
+		 display:block;
+		 left:1850px;
+		 top:20px;
+		 width:480px;
+		 height:150px;
+		 padding:0px 0px 10px 0px;
+		 border:2px solid #00008b;
+		 box-shadow:5px 5px 5px #888888;
+		 background-color:#425563;
+		 font-family:Helvetica, serif;
+	 }
+	 
+	 .auth_div_header{
+		 display:block;
+		 margin:0px 0px 5px 0px;
+		 background-color:#00008b;
+		 font-size:120%;
+		 font-weight:bold;
+		 text-align:center;
+		 font-family:Helvetica, serif;
+		 color:white;
+	 }
+	 
+	 .login_status{
+		 position:relative;
+		 display:block;
+		 /* top:50px; */
+		 margin:15px 5px 0px 5px;
+		 font-size:180%;
+		 font-weight:bold;
+		 text-align:center;
+		 font-family:Helvetica, serif;
+		 color:white;
+	 }
+	 
+	 .user_name_field{
+		 position:relative;
+		 top:10px;
+		 left:20px;
+		 width:200px;
+		 height:30px;
+		 margin:5px 5px 5px 5px;
+		 padding:0px 0px 0px 0px;
+		 border:2px solid black;
+		 background-color:white;
+		 font-size:large;
+		 font-weight:bold;
+		 font-family:Helvetica, serif;
+		 cursor:text;
+	 }
+	 
+	 .password_field{
+		 position:relative;
+		 top:10px;
+		 left:35px;
+		 width:200px;
+		 height:30px;
+		 margin:5px 5px 0px 5px;
+		 padding:0px 0px 0px 0px;
+		 border:2px solid black;
+		 background-color:white;
+		 font-size:large;
+		 font-weight:bold;
+		 font-family:Helvetica, serif;
+		 cursor:text;
+	 }
+	 
+	 .login_button{
+		 position:relative;
+		 display:inline;
+		 top:2px;
+		 left:367px;
+		 width:80px;
+		 height:28px;
+		 margin:10px;
+		 border:1px solid black;
+		 background-color:black;
+		 font-size:large;
+		 font-weight:bold;
+		 font-family:Helvetica, serif;
+		 color:white;
+		 cursor:pointer;
+	 }
+	 
+	 /* ********************************* User Authentication ************************************* */
+	 
+	 .content_div{
+		 margin:5px 5px 5px 17px;
+		 float:left;
+		 padding:5px;
+		 width:63%;
+		 height:480px;
+		 border:1px solid black;
+		 font-size:120%;
+	 } 
+	 
+	 .header_test{
+		 display:inline;
+		 position:relative;
+		 top:50px;
+		 margin:0px 10px 10px 0px;
+		 padding:0px 0px 0px 0px;
+		 font-size:400%;
+		 font-weight:bold;
+		 font-family:"Helvetica", serif;
+		 text-shadow:-1.5px -1.5px 0 white, 1.5px -1.5px 0 white, -1.5px 1.5px 0 white, 1.5px 1.5px 0 white; /* EXCEPTION: Example taken from online tutorial, but slightly altered ;) */
+	 }
+	 
+	 .image_div{
+		 float:left;
+		 margin:5px;
+		 padding:5px;
+		 width:800px;
+		 height:480px;
+		 border:1px solid black;
+	 }
+	 
+	 .content_container{
+		 display:block;
+		 position:relative;
+		 top:70px;
+		 margin:0px 200px 10px 200px;
+		 padding:30px 0px 0px 0px;	
+		 height:500px;
+		 min-width:40px;
+	 }
+	
+	 .headers{
+		 display:inline;
+		 position:relative;
+		 top:170px;
+		 margin:0px 10px 10px 0px;
+		 padding:0px 0px 0px 0px;
+		 font-size:300%;
+		 font-weight:bold;
+		 font-family:"Helvetica", serif;
+		 text-shadow:-1.5px -1.5px 0 white, 1.5px -1.5px 0 white, -1.5px 1.5px 0 white, 1.5px 1.5px 0 white; /* EXCEPTION: Example taken from online tutorial, but slightly altered ;) */
+	 }
+	 
+	 #content_span{
+		 display:inline;
+		 position:relative;
+		 width:700px;
+		 height:300px;
+		 float:left;
+	 }
+	 
+	.content{
+		 display:inline;
+		 position:relative;
+		 top:50px;
+		 margin:0px 0px 0px 0px;
+		 padding:0px 0px 0px 0px;
+		 font-size:200%;
+		 font-family:"Helvetica", serif;
+		 color:white;
+		 line-height:150%;
+	}
+	
+	#game_grid_link{
+		 display:inline;
+		 position:relative;
+		 font-size:130%;
+		 font-family:"Helvetica", serif;
+	}
+	
+	#index_img{
+		display:inline;
+		position:relative;
+		float:right;
+		border:1px solid black;
+	}
+	
+	.index_img{
+		 display:inline;
+		 margin:0px 25px 25px 10px;
+		 float:right;
+		 border:1px solid black;
+	}
+	
+	#wrap_up{
+		 display:block;
+		 position:relative;
+		 top:50px;
+		 margin:30px 60px 100px 60px;
+		 padding:0px 0px 50px 0px;
+		 height:200px;
+	}
+	
+	p#wrap_up_content{
+		 display:inline;
+		 position:relative;
+		 top:170px;
+		 left:600px;
+		 width:80px;
+		 height:100px;
+		 margin:25px 30px 25px -20px;
+		 padding:20px 20px 20px 20px;
+		 font-size:150%;
+		 font-family:"Helvetica", serif;
+		 color:white;
+		 line-height:150%;
+		 text-align:center;
+	}
+	
+	#sd_link{
+		 font-size:120%;
+		 font-family:"Helvetica", serif;
+	}
+	
+	/* ****************************************** Calendar Description ******************************************* */
+	
+	
+	 

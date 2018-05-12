@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!-- Name: James LoForti 
+	 UVID: 10675175
+     Course: Web Programming 1
+     Instructor: Dr. Brian Durney
+     Date: 12/11/2015
+     Final Project
+
+	 I declare that the following code was written by me unless otherwise stated. 
+	 I understand that copying source code from any other source constitutes cheating, 
+	 and that I will receive a zero on this project if I am found in violation of this policy.
+	 *************************************************************************** -->
+	 
+	 <head>
+		<meta charset="UTF-8">
+		<meta name="James LoForti" content="Calendar Description">
+		<title>Game Description</title>
+		<link rel="stylesheet" href="original_grid.css"></link>
+		<style>
+			html, body {
+			background-color:#425563;
+			width:100%;
+			height:100%;
+			}
+		</style>
+	</head>
+
+	<body> <!-- **************************************************************** -->
+	
+		<div class="cd_header">
+			<img id="design_logo" src="Images/calendar.png" alt="Calendar Description Logo - coppellchamber.org" style="width:222px;height:172px;"></img>
+			<h1 id="cd_title" style="font-family:helvetica, serif;left:600px">Calendar Description</h1>
+		</div>	
+		
+		<!-- <br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br> -->
+		<div class="header_link_div">
+			<a class="header_links" href="documentation.html" target="_blank">Project Documentation</a>
+			<a class="header_links2" href="game_grid_js.html" target="_blank">Final Game Grid</a>
+		</div>
+		
+			
+		<div id="top_content" class="content_div">
+			<h2 class="header_test">Introduction</h2>
+			<p class="content">
+			Welcome to the Wolverine Alley Calendar!  You no longer have to wonder whether you've completed all your tasks for the day.
+			Now, there's a calendar that will document every employees' daily tasks throughout the month.  Let's begin the tutorial.
+			If you want to see a quick snapshot of the calendar in action, click here: <a class="links" href="game_grid.html" target="_blank">Calendar Snapshot</a> 
+			. Note: The Wolverine Alley Calendar is intended for all staff.  If you want your own personal calendar to manage your day to day
+			responsibilities, try: <a class="links" href="https://www.google.com/calendar" target="_blank">Google Calendar</a>
+			</p>
+		</div>
+		<div class="image_div">
+			<img src="Captures/1.PNG" alt="Empty Calendar" style="width:800px;height:480px;"></img>
+		</div>
+		
+		<div class="content_div">
+			<h2 class="header_test">Navigation</h2>
+			<p class="content">
+			To navigate between one month to another, click on one of the arrows in the upper corners of the screen.  For the previous
+			month, click on the arrow in the upper left.  For the following month, click on the arrow in the upper right.
+			</p>
+		</div>
+		<div class="image_div">
+			<img src="Captures/2.PNG" alt="Empty Calendar" style="width:800px;height:480px;"></img>
+		</div>
+		
+		<div class="content_div">
+			<h2 class="header_test">Day View</h2>
+			<p class="content">
+			To view the tasks for a given day, click on the desired day located on the main calendar.
+			</p>
+		</div>
+		<div class="image_div">
+			<img src="Captures/3.PNG" alt="Empty Calendar" style="width:800px;height:480px;"></img>
+		</div>
+		
+		<div class="content_div">
+			<h2 class="header_test">Tasks</h2>
+			<p class="content">
+			A new window will appear that shows all the tasks scheduled for that day.  These tasks are colored according to employee
+			color IDs, and are in order of precedence.
+			</p>
+		</div>
+		<div class="image_div">
+			<img src="Captures/4.PNG" alt="Empty Calendar" style="width:800px;height:480px;"></img>
+		</div>
+		
+		<div class="content_div">
+			<h2 class="header_test">Completing Tasks</h2>
+			<p class="content">
+			Once a task has been completed, click on the circle next to the task, then click the red 'X' in the lower left-hand corner.
+			</p>
+		</div>
+		<div class="image_div">
+			<img src="Captures/5.PNG" alt="Empty Calendar" style="width:800px;height:480px;"></img>
+		</div>
+		
+		<div class="content_div">
+			<h2 class="header_test">New Task</h2>
+			<p class="content">
+			To add a new task to the current day, click on the blue plus icon near the top right corner.
+			</p>
+		</div>
+		<div class="image_div">
+			<img src="Captures/6.PNG" alt="Empty Calendar" style="width:800px;height:480px;"></img>
+		</div>
+		
+		<div class="content_div">
+			<h2 class="header_test">Creating Task</h2>
+			<p class="content">
+			In the new task window, enter the employee name, title of the task, the estimated time of completion (ETC), the precedence
+			of the task, and the instructions on how to complete the task.
+			</p>
+		</div>
+		<div class="image_div">
+			<img src="Captures/7.PNG" alt="Empty Calendar" style="width:800px;height:480px;"></img>
+		</div>
+		
+		<div class="content_div">
+			<h2 class="header_test">Save Task</h2>
+			<p class="content">
+			Once all the details have been entered for the new task, click the green check mark in the lower right-hand corner.
+			</p>
+		</div>
+		<div class="image_div">
+			<img src="Captures/8.PNG" alt="Empty Calendar" style="width:800px;height:480px;"></img>
+		</div>
+		
+		<div class="content_div">
+			<h2 class="header_test">Employee Key</h2>
+			<p class="content">
+			In the upper left-hand corner of the main calendar view, you'll see an employee key.
+			</p>
+		</div>
+		<div class="image_div">
+			<img src="Captures/9.PNG" alt="Empty Calendar" style="width:800px;height:480px;"></img>
+		</div>
+		
+		<div class="content_div">
+			<h2 class="header_test">Add Employee</h2>
+			<p class="content">
+			To add an employee to the key, click on the add button, located at the bottom of the key.
+			</p>
+		</div>
+		<div class="image_div">
+			<img src="Captures/10.PNG" alt="Empty Calendar" style="width:800px;height:480px;"></img>
+		</div>
+		
+		<div class="content_div">
+			<h2 class="header_test">New Employee</h2>
+			<p class="content">
+			In the new employee window, enter the employees name, and their associated color name, which will be used to identify tasks 
+			assigned to that employee.
+			</p>
+		</div>
+		<div class="image_div">
+			<img src="Captures/11.PNG" alt="Empty Calendar" style="width:800px;height:480px;"></img>
+		</div>
+		
+		<div class="content_div">
+			<h2 class="header_test">Save Employee</h2>
+			<p class="content">
+			To save the new employee, click on the green checkmark in the lower right-hand corner.  To cancel the new employee, 
+			click the red 'X' in the lower left hand corner.
+			</p>
+		</div>
+		<div class="image_div">
+			<img src="Captures/12.PNG" alt="Empty Calendar" style="width:800px;height:480px;"></img>
+		</div>
+		
+		<div class="content_div">
+			<h2 class="header_test">Employees</h2>
+			<p class="content">
+			Once a new employee has been added, they will appear in the employee key.
+			</p>
+		</div>
+		<div class="image_div">
+			<img src="Captures/13.PNG" alt="Empty Calendar" style="width:800px;height:480px;"></img>
+		</div>
+		
+		<div class="content_div">
+			<h2 class="header_test">Wrap-Up</h2>
+			<p class="content">
+			That about does it for the tutorial :) If you're interested in a preliminary software design, click here:
+			<a id="sd_link" href="software_design.html" target="_self">Preliminary Software Design</a>
+			</p>
+		</div>
+		<div class="image_div">
+			<img src="Captures/1.PNG" alt="Empty Calendar" style="width:800px;height:480px;"></img>
+		</div>
+		
+		<!-- <script type="text/javascript" src="authentication.js"></script> -->
+	
+	</body> <!-- **************************************************************** -->
+</html>

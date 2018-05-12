@@ -1,0 +1,1103 @@
+/* 	 Name: James LoForti 
+	 UVID: 10675175
+     Course: Web Programming 1
+     Instructor: Dr. Brian Durney
+     Date: 12/11/2015
+     Final Project
+
+	 I declare that the following code was written by me unless otherwise stated. 
+	 I understand that copying source code from any other source constitutes cheating, 
+	 and that I will receive a zero on this project if I am found in violation of this policy.
+     *************************************************************************** -->
+	 
+	 /* ********************************************* Game_Grid ********************************************* */
+	 
+	 /* **************************************** Header ******************************************* */
+	 div.header{
+		 display:block;
+		 position:relative;
+		 margin:auto;
+		 padding:0px 0px 20px 0px;
+		 width:100%;
+		 font-family:"Helvetica", serif;
+		 font-weight:bold;
+		 color:white;
+	 }
+	 
+	 .title h1{
+		 display:block;
+		 position:relative;
+		 margin:auto;
+		 padding:0px;
+		 width:30%;
+		 height:30%;
+		 text-align:center;
+		 text-shadow:-1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000; /* EXCEPTION: Example taken from online tutorial, but slightly altered ;) */
+	 }
+	 
+	 #left_willy{
+		 float:left;
+	 }
+	 
+	 #right_willy{
+		 float:right;
+	 }
+	 
+	 #prev_arrow_header{
+		 display:block;
+		 position:absolute;
+		 left:0px;
+		 text-align:right;
+		 padding:5px 10px 0px 10px;
+		 width:40px;
+		 height:40px; 
+	 }
+	 
+	 #prev_arrow{
+		 display:block;
+		 position:absolute;
+		 left:0px;
+		 padding:5px 10px 5px 65px;
+	 }
+	 
+	 #next_arrow{
+		 display:block;
+		 position:absolute;
+		 right:0px;
+		 padding:5px 65px 5px 10px;
+	 }
+	 
+	 #next_arrow_header{
+		 display:block;
+		 position:absolute;
+		 right:0px;
+		 text-align:right;
+		 padding:5px 15px 0px 10px;
+ 		 width: 40px;
+		 height:40px;
+	 }
+	 /* **************************************** Header ******************************************* */
+	 /* ************************************** Employee Key *************************************** */
+	 
+	 .employee_key_div{
+		 position:absolute;
+		 top:106px;
+		 width:200px;
+		 margin:0px 0px 0px 15px;
+		 padding:0px 0px 10px 0px;
+		 border:3px solid black;
+		 box-shadow:5px 5px 5px #888888;
+		 background-color:white;
+		 font-family:Helvetica, serif;
+		 text-align:center;
+	 }
+	 
+	 .employee_key_header{
+		 display:block;
+		 margin:0px 0px 5px 0px;
+		 border-bottom:3px solid black;
+		 background-color:yellow;
+		 font-size:160%;
+		 font-weight:bold;
+		 text-align:center;
+		 font-family:Helvetica, serif;
+	 }
+	 
+	 .employee_key_span{
+		 position:static;
+		 display:block;
+		 left:0px;
+		 width:166px;
+		 margin:0px 0px 0px 0px;
+		 padding:0px 0px 0px 0px;
+		 font-size:90%;
+		 font-weight:bold;
+	 }
+	 
+	 .add_employee_button{
+		 position:relative;
+		 display:block;
+		 width:80px;
+		 height:30px;
+		 left:60px;
+		 margin:5px;
+		 border:1px solid black;
+		 background-color:blue;
+		 font-size:large;
+		 font-weight:bold;
+		 cursor:pointer;
+	 }
+	 
+	 /* ********************LEGACY BELOW ********************** */
+	 
+	 span#employee_key{
+		 display:inline;
+		 position:absolute;
+		 margin:0px 5px 0px 10px;
+		 width:159px;
+		 height:215px;
+		 z-index:2;
+		 border-style:solid;
+		 border-width:3px;
+		 border-color:black;
+		 border-collapse:collapse; 
+		 box-shadow:5px 5px 5px #888888;
+		 font-family:"Helvetica", serif;
+		 text-align:center;
+	 }
+	 
+	 span#employee_key_header_bckgrd{
+		 display:block;
+		 width:159px;
+		 height:30px;
+		 border-bottom: 2px solid black;
+		 background-color:yellow;
+	 }
+	 
+	 p#employee_key_header{
+		 margin:0px;
+		 padding:5px;
+		 height:30px;
+		 text-align:center;
+		 font-weight:bold;
+		 font-size:large;
+	 }
+	 
+	 .employee_list{
+		 margin:5px 5px 5px 5px;
+		 padding:5px 0px 5px 25px;
+		 text-align:left;
+		 color:white;
+	 }
+	 
+	 span#add_employee_btn{
+		 display:block;
+		 width:50px;
+		 height:25px;
+		 left:57px;
+		 margin:0px 0px 0px 57px;
+		 border:1px solid black;
+		 border-radius:15px;
+		 background-color:#1e90ff;
+	 }
+	 
+	 p#add_employee_btn_text{
+		 margin:0px;
+		 padding:5px;
+		 height:25px;
+		 text-align:center;
+		 font-weight:bold;
+		 font-size:small;
+		 color:white;
+	 }
+	 /* ************************************** Employee Key *************************************** */
+	 /* *********************************** New Employee Form ************************************* */
+	 
+	 .new_employee_div{
+		 position:absolute;
+		 display:inline;
+		 z-index:5;
+		 top:210px;
+		 left:300px;
+		 width:285px;
+		 height:160px; 
+		 margin:0px 0px 0px 15px;
+		 padding:0px 0px 10px 0px;
+		 border:2px solid black;
+		 border-radius:24px 24px 0px 0px;
+		 box-shadow:5px 5px 5px #888888;
+		 background-color:white;
+		 font-family:Helvetica, serif;
+	 }
+	 
+	 .new_employee_header{
+		 display:block;
+		 margin:0px 0px 5px 0px;
+		 border-bottom: 2px solid black;
+		 border-radius:24px 24px 0px 0px;
+		 background-color:yellow;
+		 text-align:center;
+		 font-weight:bold;
+		 font-size:140%;
+	 }
+	 
+	 .new_employee_content{
+		 margin:0px 0px 0px 28px;
+		 padding:0px;
+		 font-size:130%;
+		 list-style-type:square;
+		 line-height:200%;
+		 font-family:Helvetica, serif;
+	 }
+	 
+	 /* *********************** LEGACY BELOW ************************** */
+	 
+	 #new_employee_form{
+		 display:block;
+		 position:absolute;
+		 z-index:3;
+		 top:290px;
+		 left:150px;
+		 width:250px;
+		 height:200px;
+		 border:2px solid black;
+		 border-radius:25px;
+		 box-shadow:5px 5px 5px #888888;
+		 background-color:white;
+		 font-family:"Helvetica", serif;
+	 }
+	 
+	 #new_employee_form_header_bckgrd{
+		 display:block;
+		 width:250px;
+		 height:30px;
+		 border-radius:25px 25px 0px 0px;
+		 border-bottom: 2px solid black;
+		 background-color:yellow;
+	 }
+	 
+	 #new_employee_form_header{
+		 margin:0px;
+		 padding:5px;
+		 height:30px;
+		 text-align:center;
+		 font-weight:bold;
+		 font-size:large;
+	 }
+	 
+	 #new_employee_list{
+		 list-style:square;
+		 line-height:250%;
+		 font-size:large;
+	 }
+	 
+	 .new_employee_textbox{
+		 margin:12px 23px 0px 0px;
+		 width:120px;
+		 height:20px;
+		 border:1px solid black;
+		 box-shadow:2px 2px 2px #888888;
+		 float:right;
+	 }
+	 
+	 #cancel_btn{
+		 display:inline;
+		 position:absolute;
+		 width:60px;
+		 height:30px;
+		 left:15px;
+		 margin:0px 0px 0px 0px;
+		 border:1px solid black;
+		 border-radius:15px;
+		 box-shadow:0.5px 0.5px 0.5px #888888;
+		 background-color:red;
+	 }
+	 
+	 #cancel_btn_text{
+		 margin:0px;
+		 padding:7px;
+		 height:22px;
+		 text-align:center;
+		 font-weight:bold;
+		 font-size:small;
+		 color:white;
+		 font-family:"Helvetica", serif;
+	 }
+	 
+	 #save_btn{
+		 display:inline;
+		 width:60px;
+		 height:30px;
+		 left:20px;
+		 float:right; 
+		 margin:0px 13px 0px 0px;
+		 border:1px solid black;
+		 border-radius:15px;
+		 box-shadow:1px 1px 1px #888888;
+		 background-color:green;
+	 }
+	 
+	 #save_btn_text{
+		 margin:0px;
+		 padding:7px;
+		 height:22px;
+		 text-align:center;
+		 font-weight:bold;
+		 font-size:small;
+		 color:white;
+		 font-family:"Helvetica", serif;
+	 }
+	 /* *********************************** New Employee Form ************************************* */
+	 /* ************************************* Main Calendar *************************************** */
+	 .calendar{
+		 position:relative;
+		 width:80%;
+		 margin:auto;
+ 		 table-layout:fixed;
+		 background-color:white;
+		 border:3px solid black;
+ 		 border-collapse:collapse;
+		 font-family:Helvetica, serif;
+	 }
+		 
+	 .table-headers{
+		 line-height:30px;
+		 text-align:center;
+		 font-weight:bold;
+		 border:2px solid black;
+	 }
+	 
+	 tr{
+		 line-height:30px;
+	 }
+	 
+	 td{
+ 		 border-style:solid;
+		 border-width:2px;
+		 text-align:left;
+	 }
+	
+	 .date{
+		 margin:0px 65px 0px 0px;
+		 vertical-align:100px;
+		 font-weight:bold;
+	 }
+	 
+	 .daily_tasks{
+ 		 display:table-cell;
+		 color:#7a9a01;
+	 }
+	 
+	 .task_span{
+		 position:relative;
+		 display:table-cell;
+		 left:75px;
+		 bottom:0px;
+		 width:75px;
+		 height:30px;
+	 }
+	 /* ************************************* Main Calendar *************************************** */
+	 /* *************************************** Day Form ****************************************** */
+	 
+	 .dayDiv{
+		 position:absolute;
+		 left:951px;
+		 top:-600px;
+		 width:480px;
+		 padding:0px 0px 10px 0px;
+		 border:2px solid black;
+		 border-radius:25px 25px 0px 0px;
+		 box-shadow:5px 5px 5px #888888;
+		 background-color:white;
+		 font-family:Helvetica, serif;
+	 }
+	 
+	 .div_headers{
+		 display:block;
+		 margin:0px 0px 5px 0px;
+		 border-bottom:2px solid black;
+		 border-radius:24px 24px 0px 0px;
+		 background-color:#f1b828;
+		 font-size:160%;
+		 font-weight:bold;
+		 text-align:center;
+		 font-family:Helvetica, serif;
+	 }
+	 
+	 .new_task_btn{
+		 position:relative;
+		 display:inline;
+		 width:80px;
+		 height:25px;
+		 top:0px;
+		 left:190px;
+		 margin:10px;
+		 border:1px solid black;
+		 background-color:#00bfff;
+		 font-weight:bold;
+		 font-family:Helvetica, serif;
+		 cursor:pointer;
+	 }
+	 
+	 .delete_btn{
+		 position:relative;
+		 display:inline;
+		 width:80px;
+		 height:25px;
+		 left:5px;
+		 margin:10px;
+		 border:1px solid black;
+		 background-color:red;
+		 font-size:large;
+		 font-weight:bold;
+		 font-family:Helvetica, serif;
+		 cursor:pointer;
+	 }
+	 
+	 .okay_btn{
+		 position:relative;
+		 display:inline;
+		 width:80px;
+		 height:25px;
+		 left:276px;
+		 margin:10px;
+		 border:1px solid black;
+		 background-color:green;
+		 font-size:large;
+		 font-weight:bold;
+		 font-family:Helvetica, serif;
+		 cursor:pointer;
+	 }
+	 
+	 .new_task_div{
+		 position:absolute;
+		 margin:0px;
+		 padding:0px 0px 10px 0px;
+		 width:380px;
+		 border:2px solid black;
+		 border-radius:25px 25px 0px 0px;
+		 box-shadow:5px 5px 5px #888888;
+		 background-color:white;
+	 }
+	 
+	 .new_task_content{
+		 margin:0px 5px 0px 28px;
+		 padding:0px;
+		 font-size:130%;
+		 list-style-type:square;
+		 line-height:200%;
+		 font-family:Helvetica, serif;
+	 }
+	 
+	 .save_btn{
+		 position:relative;
+		 display:inline;
+		 width:80px;
+		 height:25px;
+		 left:176px;
+		 margin:10px;
+		 border:1px solid black;
+		 background-color:green;
+		 font-size:large;
+		 font-weight:bold;
+		 font-family:Helvetica, serif;
+		 cursor:pointer;
+	 }
+	 
+	 /* ---OLD BELOW----*/
+	 
+	 .internal_forms{
+		 background-color:white;
+		 border:2px solid black;
+		 padding:0px 0px 10px 0px;
+		 border-radius:25px;
+		 font-family:"Helvetica", serif;
+		 box-shadow:5px 5px 5px #888888;
+		 position:absolute;
+		 margin:-600px 0px 0px 951px;
+		 width:480px;
+		 height:330px;
+	 }
+	 
+	 #task_form{
+		 position:absolute;
+		 margin:-600px 0px 0px 951px;
+		 width:480px;
+		 height:330px;
+	 }
+	 
+	 #task_header{
+		 display:block;
+		 margin:0px 0px 5px 0px;
+		 border-bottom: 2px solid black;
+		 border-radius:24px 24px 0px 0px;
+		 background-color:#f1b828;
+		 font-size:160%;
+		 font-weight:bold;
+		 text-align:center;
+	 }
+	 
+	 ul#task_list{
+		 font-size:150%;
+		 margin:0px 0px 0px 38px;
+		 list-style-type:circle;
+		 padding: 0px;
+	 }
+	 
+	 .task_sub_list{
+		 font-size:50%;
+		 margin:0px 0px 0px 25px;
+		 list-style-type:square;
+		 padding: 0px;
+	 }
+	 
+	 #add_btn{
+		 display:inline;
+		 position:relative;
+		 width:50px;
+		 height:50px;
+		 margin:0px 10px 10px 10px;
+		 padding:0px 0px 0px 0px;
+		 float:right;
+	 }
+	 
+	 #delete_btn{
+		 display:inline;
+		 position:relative;
+		 width:40px;
+		 height:40px;
+		 margin:5px 10px 10px 15px;
+		 padding:20px 0px 0px 0px;
+	 }
+	 
+	 .ok_btn{
+		 display:inline;
+		 width:50px;
+		 height:40px;
+		 margin:0px 20px 0px 0px;
+		 padding:0px 0px 0px 0px;
+		 float:right;
+	 }
+	 /* *************************************** Day Form ****************************************** */
+	 /* ************************************** Task Form ****************************************** */
+	 #new_form{
+		 position:absolute;
+		 margin:-450px 0px 0px 1465px;
+		 width:330px;
+		 height:285px;
+	 }
+	 
+	 #new_header{
+		 display:block;
+		 margin:0px 0px 5px 0px;
+		 border-bottom: 2px solid black;
+		 border-radius:24px 24px 0px 0px;
+		 background-color:#f1b828;
+		 text-align:center;
+		 font-weight:bold;
+		 font-size:140%;
+	 }
+	 
+	 #new_list{
+		 font-size:130%;
+		 margin:0px 5px 0px 28px;
+		 list-style-type:square;
+		 padding:0px;
+	 }
+	 
+	 .text_box{
+		 display:inline;
+		 width:150px;
+		 height:20px;
+		 margin:4px 13px 0px 0px;
+		 border:1px;
+		 border-style:solid;
+		 border-color:black;
+		 box-shadow:2px 2px 2px #888888;
+		 float:right;
+	 }
+	 /* ************************************** Task Form ****************************************** */
+	 /* ************************************** Last Login ****************************************** */
+	 
+	 .last_login_div{
+		 display:inline;
+		 position:absolute;
+		 left:2170px;
+		 top:101px;
+		 width:200px;
+		 height:200px;
+		 padding:0px 0px 10px 0px;
+		 border:2px solid black;
+		 border-radius:25px 25px 0px 0px;
+		 box-shadow:5px 5px 5px #888888;
+		 background-color:white;
+		 font-family:Helvetica, serif;
+	 }
+	 
+	 .last_login_header{
+		 display:block;
+		 margin:0px 0px 5px 0px;
+		 border-bottom:2px solid black;
+		 border-radius:24px 24px 0px 0px;
+		 background-color:#00ff00;
+		 font-size:160%;
+		 font-weight:bold;
+		 text-align:center;
+		 font-family:Helvetica, serif;
+	 }
+	 
+	 .last_login_span{
+		 position:relative;
+		 display:block;
+		 height:120px;
+		 margin:15px 10px 5px 10px;
+		 font-size:120%;
+		 font-weight:bold;
+		 text-align:center;
+		 font-family:Helvetica, serif;
+		 color:black;
+	 }
+	 
+	 .clear_btn{
+		 position:relative;
+		 display:inline;
+		 width:110px;
+		 height:25px;
+		 top:0px;
+		 left:45px;
+		 border:1px solid black;
+		 background-color:red;
+		 font-size:large;
+		 font-weight:bold;
+		 font-family:Helvetica, serif;
+		 cursor:pointer;
+	 }
+	 
+	 /* ************************************** Last Login ****************************************** */
+	 
+	 /* ********************************************* Game_Grid - END ********************************************* */
+	 /* ********************************************* Software_Design ********************************************* */
+	 
+	 /* **************************************** Header ******************************************* */
+	 .sd_header{
+		 display:inline;
+		 position:relative;
+		 margin:0px 0px 0px 0px;
+		 padding:0px 0px 20px 0px;
+		 float:left;
+		 width:100%;
+		 height: 50%;
+		 font-family:"Copperplate Gothic Light", serif;
+		 font-weight:bold;
+		 color:white;
+		 text-align:center;
+		 text-shadow:-1.5px -1.5px 0 #0000ff, 1.5px -1.5px 0 #0000ff, -1.5px 1.5px 0 #0000ff, 1.5px 1.5px 0 #0000ff; /* EXCEPTION: Example taken from online tutorial, but slightly altered ;) */
+		 background-color:black;
+	 }
+	 
+	 #design_logo{
+		 display:inline;
+		 position:relative;
+		 margin:5px 10px 0px 40px;
+		 float:left;
+	 }
+	 
+	 h1#sd_title{
+		 display:inline;
+		 margin:50px 10px 10px 40px;
+		 padding:100px 0px 0px 0px;
+		 width: 150%;
+		 height:150%;
+		 vertical-align:-118px;
+		 font-size:500%;
+		 font-weight:bold;
+		 font-style:italic;
+	 }
+	 
+	 /* **************************************** Header ******************************************* */
+	 
+	 #sd_content{
+		 position:relative;
+		 margin:0px 390px 10px 390px;
+		 padding: 250px 100px 50px 100px;
+		 font-family:"Helvetica", serif;
+		 font-size:150%;
+		 color:white;
+	 }
+	 
+	 #sd_synopsis_title{
+		 color:black;
+		 font-weight:bold;
+		 font-size:200%;
+	 }
+	 
+	 span.sd_list_titles{
+		 padding:0px 0px 0px 100px;
+		 text-align:center;
+		 width:800px;
+		 font-weight:bold;
+		 font-size:60px;
+		 color:black;
+		 list-style:none;
+		 text-shadow:-1.5px -1.5px 0 green, 1.5px -1.5px 0 green, -1.5px 1.5px 0 green, 1.5px 1.5px 0 green; /* EXCEPTION: Example taken from online tutorial, but slightly altered ;) */
+	 }
+	 
+	 .sd_list{
+		 line-height:150%;
+	 }
+	 
+	 #disclaimer{
+		 color:black;
+		 text-align:center;
+	 }
+	
+	 /* ****************************************** Software_Design END ******************************************** */
+	 /* ****************************************** Calendar Description ******************************************* */
+	 
+	 /* **************************************** Header ******************************************* */
+	 .cd_header{
+		 display:block;
+		 position:relative;
+		 margin:0px 0px 0px 0px;
+		 padding:0px 0px 0px 0px;
+		 float:left;
+		 width:100%;
+		 height:200px;
+		 font-weight:bold;
+		 color:white;
+		 text-align:center;
+		 text-shadow:-1.5px -1.5px 0 #0000ff, 1.5px -1.5px 0 #0000ff, -1.5px 1.5px 0 #0000ff, 1.5px 1.5px 0 #0000ff; /* EXCEPTION: Example taken from online tutorial, but slightly altered ;) */
+		 background-color:black;
+	 }
+	 
+	 #design_logo{
+		 display:inline;
+		 position:relative;
+		 margin:5px 0px 0px 40px;
+		 float:left;
+	 }
+	 
+	 h1#cd_title{
+		 display:inline;
+		 position:absolute;
+		 margin:50px 10px 40px 0px;
+		 left:450px;
+		 width:50%;
+		 height:110%;
+		 z-index:2;
+		 vertical-align:-90px;
+		 font-size:600%;
+		 font-weight:bold;
+		 font-style:italic;
+		 font-family:Copperplate Gothic Light, serif;
+	 }
+	 /* **************************************** Header ******************************************* */
+	 /* ********************************* User Authentication ************************************* */
+	 
+	 .authentication_div{
+		 position:absolute;
+		 display:block;
+		 left:1850px;
+		 top:20px;
+		 width:480px;
+		 height:150px;
+		 padding:0px 0px 10px 0px;
+		 border:2px solid #00008b;
+		 box-shadow:5px 5px 5px #888888;
+		 background-color:#425563;
+		 font-family:Helvetica, serif;
+	 }
+	 
+	 .auth_div_header{
+		 display:block;
+		 margin:0px 0px 5px 0px;
+		 background-color:#00008b;
+		 font-size:120%;
+		 font-weight:bold;
+		 text-align:center;
+		 font-family:Helvetica, serif;
+		 color:white;
+	 }
+	 
+	 .login_status{
+		 position:relative;
+		 display:block;
+		 margin:15px 5px 0px 5px;
+		 font-size:180%;
+		 font-weight:bold;
+		 text-align:center;
+		 font-family:Helvetica, serif;
+		 color:white;
+	 }
+	 
+	 .user_name_field{
+		 position:relative;
+		 top:10px;
+		 left:20px;
+		 width:200px;
+		 height:30px;
+		 margin:5px 5px 5px 5px;
+		 padding:0px 0px 0px 0px;
+		 border:2px solid black;
+		 background-color:white;
+		 font-size:large;
+		 font-weight:bold;
+		 font-family:Helvetica, serif;
+		 cursor:text;
+	 }
+	 
+	 .password_field{
+		 position:relative;
+		 top:10px;
+		 left:35px;
+		 width:200px;
+		 height:30px;
+		 margin:5px 5px 0px 5px;
+		 padding:0px 0px 0px 0px;
+		 border:2px solid black;
+		 background-color:white;
+		 font-size:large;
+		 font-weight:bold;
+		 font-family:Helvetica, serif;
+		 cursor:text;
+	 }
+	 
+	 .login_button{
+		 position:relative;
+		 display:inline;
+		 top:2px;
+		 left:367px;
+		 width:80px;
+		 height:28px;
+		 margin:10px;
+		 border:1px solid black;
+		 background-color:black;
+		 font-size:large;
+		 font-weight:bold;
+		 font-family:Helvetica, serif;
+		 color:white;
+		 cursor:pointer;
+	 }
+	 
+	 /* ********************************* User Authentication ************************************* */
+	 
+	 .header_link_div{
+		 display:block;
+		 position:relative;
+		 margin:0px 0px 0px 0px;
+		 padding:0px 0px 0px 0px;
+		 float:left;
+		 width:100%;
+		 height:200px;
+		 text-align:center;
+	 }
+	 
+	 .header_links{
+		 /* display:block; */
+		 position:relative;
+		 display:block;
+		 top:40px;
+		 left:1000px;
+		 width:400px;
+		 height:30px;
+		 margin:10px;
+		 font-size:200%;
+		 font-family:Helvetica, serif;
+		 font-weight:bold;
+		 text-align:center;
+	 }
+	 
+	 .header_links2{
+		 display:block;
+		 position:relative;
+		 top:60px;
+		 left:1010px;
+		 width:380px;
+		 height:30px;
+		 margin:10px;
+		 font-size:200%;
+		 font-family:Helvetica, serif;
+		 font-weight:bold;
+		 text-align:center;
+	 }
+	 
+	 .content_div{
+		 margin:5px 5px 5px 17px;
+		 float:left;
+		 padding:5px;
+		 width:63%;
+		 height:480px;
+		 border:1px solid black;
+		 font-size:120%;
+	 } 
+	 
+	 .header_test{
+		 display:inline;
+		 position:relative;
+		 top:50px;
+		 margin:0px 10px 10px 0px;
+		 padding:0px 0px 0px 0px;
+		 font-size:400%;
+		 font-weight:bold;
+		 font-family:"Helvetica", serif;
+		 text-shadow:-1.5px -1.5px 0 white, 1.5px -1.5px 0 white, -1.5px 1.5px 0 white, 1.5px 1.5px 0 white; /* EXCEPTION: Example taken from online tutorial, but slightly altered ;) */
+	 }
+	 
+	 .image_div{
+		 float:left;
+		 margin:5px;
+		 padding:5px;
+		 width:800px;
+		 height:480px;
+		 border:1px solid black;
+	 }
+	 
+	 .content_container{
+		 display:block;
+		 position:relative;
+		 top:70px;
+		 margin:0px 200px 10px 200px;
+		 padding:30px 0px 0px 0px;	
+		 height:500px;
+		 min-width:40px;
+	 }
+	
+	 .headers{
+		 display:inline;
+		 position:relative;
+		 top:170px;
+		 margin:0px 10px 10px 0px;
+		 padding:0px 0px 0px 0px;
+		 font-size:300%;
+		 font-weight:bold;
+		 font-family:"Helvetica", serif;
+		 text-shadow:-1.5px -1.5px 0 white, 1.5px -1.5px 0 white, -1.5px 1.5px 0 white, 1.5px 1.5px 0 white; /* EXCEPTION: Example taken from online tutorial, but slightly altered ;) */
+	 }
+	 
+	 #content_span{
+		 display:inline;
+		 position:relative;
+		 width:700px;
+		 height:300px;
+		 float:left;
+	 }
+	 
+	.content{
+		 display:inline;
+		 position:relative;
+		 top:50px;
+		 margin:0px 0px 0px 0px;
+		 padding:0px 0px 0px 0px;
+		 font-size:200%;
+		 font-family:"Helvetica", serif;
+		 color:white;
+		 line-height:150%;
+	}
+	
+	#game_grid_link{
+		 display:inline;
+		 position:relative;
+		 font-size:130%;
+		 font-family:Helvetica, serif;
+	}
+	
+	#index_img{
+		display:inline;
+		position:relative;
+		float:right;
+		border:1px solid black;
+	}
+	
+	.index_img{
+		 display:inline;
+		 margin:0px 25px 25px 10px;
+		 float:right;
+		 border:1px solid black;
+	}
+	
+	#wrap_up{
+		 display:block;
+		 position:relative;
+		 top:50px;
+		 margin:30px 60px 100px 60px;
+		 padding:0px 0px 50px 0px;
+		 height:200px;
+	}
+	
+	p#wrap_up_content{
+		 display:inline;
+		 position:relative;
+		 top:170px;
+		 left:600px;
+		 width:80px;
+		 height:100px;
+		 margin:25px 30px 25px -20px;
+		 padding:20px 20px 20px 20px;
+		 font-size:150%;
+		 font-family:"Helvetica", serif;
+		 color:white;
+		 line-height:150%;
+		 text-align:center;
+	}
+	
+	#sd_link{
+		 font-size:120%;
+		 font-family:"Helvetica", serif;
+	}
+	
+	/* ****************************************** Calendar Description ******************************************* */
+	/* ********************************************* Documentation *********************************************** */
+	
+	.d_header{
+		 display:block;
+		 position:relative;
+		 margin:0px 0px 40px 0px;
+		 padding:0px 0px 0px 0px;
+		 float:left;
+		 width:100%;
+		 height:200px;
+		 font-weight:bold;
+		 color:white;
+		 text-align:center;
+		 text-shadow:-1.5px -1.5px 0 #0000ff, 1.5px -1.5px 0 #0000ff, -1.5px 1.5px 0 #0000ff, 1.5px 1.5px 0 #0000ff; /* EXCEPTION: Example taken from online tutorial, but slightly altered ;) */
+		 background-color:black;
+	 }
+	
+	.objective_table{
+		 position:relative;
+		 width:70%;
+		 margin:auto;
+		 margin-bottom:80px;
+		 background-color:white;
+		 border:3px solid grey; 
+ 		 border-collapse:collapse;
+		 font-family:Helvetica, serif;
+	}
+	
+	.objective_table_header{
+		 line-height:50px;
+		 text-align:center;
+		 font-weight:bold;
+		 font-size:120%;
+		 background-color:tan;
+	}
+	
+	.ob_table_row{
+		padding:5px;
+		border:2px solid black;
+	}
+	
+	.ob_table_data1{
+		width:20%;
+		text-align:center;
+		font-weight:bold;
+		padding:2px;
+	}
+	
+	.ob_table_data2{
+		padding:4px;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 

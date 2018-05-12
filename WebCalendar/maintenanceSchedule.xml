@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE maintenance [
+ <!ELEMENT maintenance (monday_wednesday, tuesday_thursday, friday_saturday, task)>
+ <!ELEMENT monday_wednesday (#PCDATA)>
+ <!ELEMENT tuesday_thursday (#PCDATA)>
+ <!ELEMENT friday_saturday (#PCDATA)>
+ <!ELEMENT task (#PCDATA)>
+]>
+
+<!-- Name: James LoForti 
+	 UVID: 10675175
+     Course: Web Programming 1
+     Instructor: Dr. Brian Durney
+     Date: 11/16/2015
+     Assignment 6: Load XML Data
+
+	 I declare that the following code was written by me unless otherwise stated. 
+	 I understand that copying source code from any other source constitutes cheating, 
+	 and that I will receive a zero on this project if I am found in violation of this policy.
+     *************************************************************************** -->
+	 
+	 <maintenance>
+		 <monday_wednesday>
+			 <task>Oil Lanes</task>
+			 <task>Clean Approach</task>
+		 </monday_wednesday>
+		 <tuesday_thursday>
+			 <task>Wash Pins</task>
+			 <task>Lubricate Machines</task>
+		 </tuesday_thursday>
+		 <friday_saturday>
+			 <task>Submit League Games</task>
+			 <task>Server Diagnostics</task>
+		 </friday_saturday>
+	 </maintenance>
+	 
+	 

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!-- Name: James LoForti 
+	 UVID: 10675175
+     Course: Web Programming 1
+     Instructor: Dr. Brian Durney
+     Date: 12/11/2015
+     Final Project
+
+	 I declare that the following code was written by me unless otherwise stated. 
+	 I understand that copying source code from any other source constitutes cheating, 
+	 and that I will receive a zero on this project if I am found in violation of this policy.
+     *************************************************************************** -->
+	 
+	<head>
+		<meta charset="UTF-8">
+		<meta name="James LoForti" content="Software Design">
+		<title>Software Design</title>
+		<link rel="stylesheet" href="original_grid.css"></link>
+		<style>
+			body {background-color:#425563}
+		</style>
+	</head>
+
+	<body> <!-- **************************************************************** -->
+	
+	<span class="sd_header">
+		<img id="design_logo" src="Images/software_design.png" alt="Software Design Logo - softnology.com" style="width:250px;height:200px;"></img>
+		<h1 id="sd_title" style="font-family:helvetica, serif">Preliminary Software Design</h1>
+	</span>	
+	
+	<div id="sd_content">
+	
+		<h2 id="sd_synopsis_title">Notes:</h2><a class="links" href="game_grid_js.html" target="_blank">JavaScript generated grid</a> 
+		<p id="sd_synopsis_content">
+			As I go through the process of learning JavaScript, I find it easiest to divide the js code into seperate files since I am
+			occustom to C-based languages which utilize classes.  Even though it was not required, I decided to make the model, view,
+			and controller into seperate js files.  The encapsulation within the view, and the encapsulation within the controller may not
+			follow traditional MVC design, but the model is certainly encapsulated as instructed.  As I designed this project it seemed 
+			logical to consider the js file that initializes the grid, as the "View".  The "Controller" is certainly the interface between 
+			the view and the model, but it does contain some "innerHTML" lines of code which display content in the view directly. Although 
+			my code meets the project criteria, I wanted to explain my train of thought. :)
+		</p>
+		<p id="sd_synopsis_content">
+			Since a calendar is highly event-driven, I configured some of my controller/model interfaces to take parameters, which will eventually
+			come from a form where the user supplies the input.  Because of this, my "hard-coded" test cases that produce the current game state 
+			are passed as parameters to the model, rather than hard-coded directly into the primary data structure.  Either way, my project does in 
+			fact display information from the model, in the HTML table.  This information simply originates from hard-coded parameters that get based
+			to the model.
+		</p>
+		<p id="sd_synopsis_content">
+			I actually found Assignment 3 to be very difficult, since we had to design the underlying business logic of our application without 
+			knowing how event handlers work in JavaScript.  When first learning a programming language, I find it easiest to think in a linear fashion,
+			which means following the flow of control from the object generating an event, all the way to the underlying data manipulation.  Anyway, 
+			I always like a good challenge.  I hope the few adjustments I made to this assignment are sufficient and clear.  I can't wait for the 
+			next assignment so I can implement event handlers to make the whole thing come together.
+		</p>
+	
+		<span class="sd_list_titles">Model</span>
+		<ul class="sd_list">
+			<li>Primary Data Structure: 3-Dimensional Array.</li>
+				<ul>
+					<li>Array Sets & Subsets:</li>
+					<ul>
+						<li>[Table Row]</li>
+						<ul>
+							<li>[Table Column]</li>
+							<ul>
+								<li>[Array of Task Objects]</li>
+							</ul>
+						</ul>
+					</ul>
+					<li>Example: 1 element of 1st dimensional array = [[Task], [Task, Task], [], [], [Task, Task, Task], [],[Task]]
+				</ul>
+			<li>Objects:</li>
+			<ul>
+				<li>Task:</li>
+				<ul>
+					<li>Data Members:</li>
+					<ul>
+						<li>Employee (object)</li>
+						<li>title</li>
+						<li>etc</li>
+						<li>precedence</li>
+						<li>instructions</li>
+					</ul>
+					<li>Functions:</li>
+					<ul>
+						<li>Parameterized Constructor(_employee, _title, _etc, _precedence, _instructions)</li>
+					</ul>
+					<li>Example: task = new Task(Jimmy, "Clean Control Desk", "1", "20 minutes", "Clean: on-top/underneath counters, inside drawers");</li>
+				</ul>
+				<li>Employee:</li>
+				<ul>
+					<li>Data Members:</li>
+					<ul>
+						<li>name</li>
+						<li>id</li>
+					</ul>
+					<li>Functions:</li>
+					<ul>
+						<li>Parameterized Constructor(_name, _id)</li>
+					</ul>
+					<li>Example: employee = new Employee("Jimmy", "blue");</li>
+				</ul>
+			</ul>
+			<li>Functions:</li>
+			<ul>
+				<li>addTask(_row, _col, _task)</li>
+				<ul>
+					<li>Purpose: To push the given task into the specified 2D index</li>
+					<li>Return: None</li>
+				</ul>
+				<li>getTasks(_row, _col)</li>
+				<ul>
+					<li>Purpose: To get the taskArray at the specified 2D index</li>
+					<li>Return: An array of task objects</li>
+				</ul>
+				<li>getDailyTaskTotal(_row, _col)</li>
+				<ul>
+					<li>Purpose: To return the length of the array at the given 2D index</li>
+					<li>Return: The total number of tasks</li>
+				</ul>
+			</ul>
+		</ul>
+	
+		<span class="sd_list_titles">Controller</span>
+		<ul class="sd_list">
+			<li>Functions:</li>
+			<ul>
+				<li>populateCalendarTasks(_numRows, _numCols)</li>
+				<ul>
+					<li>Purpose: To iterate through each row/col of the calendar, get numOfTasks, and display in cell</li>
+					<li>Return: None</li>
+				</ul>
+				<li>createTask(_employee, _title, _precedence, _eta, _instructions, _row, _col)</li>
+				<ul>
+					<li>Purpose: To create a Task object with the Inputs from the form</li>
+					<li>Return: None</li>
+				</ul>
+				<li>displayThisDay()</li>
+				<ul>
+					<li>Purpose: To get the data (tasks) for the given day and display it in a list fashion</li>
+					<li>Return: None</li>
+				</ul>
+			</ul>
+		</ul>
+		
+		<span class="sd_list_titles">View</span>
+		<ul class="sd_list">
+			<li>Note: The View creates the game grid via js, but may eventually be merged with the controller.</li>
+			<li>Data Members:</li>
+			<ul>
+				<li>calendar</li>
+				<li>numRows</li>
+				<li>numCols</li>
+			</ul>
+			<li>Functions:</li>
+			<ul>
+				<li>createCalendar(_numRows, _numCols)</li>
+				<ul>
+					<li>Purpose: To create the calendar table and its associated th, tr, and td (flow of control)</li>
+					<li>Return: None</li>
+				</ul>
+				<li>createTableHeaders(_numCols)</li>
+				<ul>
+					<li>Purpose: To create the header row, and insert cell data</li>
+					<li>Return: None</li>
+				</ul>
+				<li>createTableData(_numRows, _numCols,  _dateNumbers)</li>
+				<ul>
+					<li>Purpose: To create the table rows & cells, and to insert their data</li>
+					<li>Return: None</li>
+				</ul>
+				<li>getDateNumbers()</li>
+				<ul>
+					<li>Purpose: To fill an array with the dates from last, current, and previous months in view</li>
+					<li>Return: dateNumbers in the form of an array</li>
+				</ul>
+				<li>setCalendarAttr()</li>
+				<ul>
+					<li>Purpose: To set the attributes of the calendar</li>
+					<li>Return: None</li>
+				</ul>
+				<li>setTableHeaderAttr(_header)</li>
+				<ul>
+					<li>Purpose: To set the attributes of the THeads</li>
+					<li>Return: None</li>
+				</ul>
+				<li>setDateSpanAttr(_span)</li>
+				<ul>
+					<li>Purpose: To set the attributes of the dateSpan</li>
+					<li>Return: None</li>
+				</ul>
+				<li>setTaskSpanAttr(_span)</li>
+				<ul>
+					<li>Purpose: To set the attributes of the taskSpan</li>
+					<li>Return: None</li>
+				</ul>
+				<li>setTableDataAttr(_cell)</li>
+				<ul>
+					<li>Purpose: To set the attributes of the table cells</li>
+					<li>Return: None</li>
+				</ul>
+			</ul>
+		</ul>
+		
+		<hr>
+		<h2 id="disclaimer">The remainder of my software design deals with the forms and logic outside of the scope of the actual game grid.
+			I have tweaked a few things below since I now know more about JavaScript, but the majority of the following will be
+			changed or rearranged once we learn event handlers and are required to meet criteria dealing with the portions of
+			our application that lye outside of the game grid.
+		</h2>
+	
+		<span class="sd_list_titles">Main Calendar</span>
+		<ul class="sd_list">
+			<li>Represents the main calendar page.</li>
+			<ul>
+				<li>Data Members:</li>
+				<ul>
+					<li>totalDaysInMonth(int)</li>
+					<li>todaysDate (DateTime object)</li>
+					<li>dayOfWeek(string)</li>
+					<li>numberOfTasks (string)</li>
+					<li>employees(array(Employee))</li>
+				</ul>
+				<li>Methods:</li>
+				<ul>
+					<li>calcTotalDaysInMonth(DateTime _date):</li>
+					<ul>
+						<li>Purpose: To calculate the total number of days in the given month.</li>
+						<li>Return: totalDaysInMonth in the form of an int.</li>
+					</ul>
+					<li>getDayOfWeek(DateTime _date):</li>
+					<ul>
+						<li>Purpose: To get the day of the week for a given date.</li>
+						<li>Return: dayOfWeek in the form of a string.</li>
+					</ul>
+					<li>setNumberOfTasks(string _numOfTasks, DateTime _date)</li>
+					<ul>
+						<li>Purpose: To set the total number of tasks for a given day on the calendar by calling the getTasks() in the Day class.</li>
+						<li>Return: numberOfTasks in the form of a string.</li>
+					</ul>
+				</ul>
+				<li>Event Handlers:</li>
+				<ul>
+					<li>previousMonthBtn_Click(the object generating the event, and the event args):</li>
+					<ul>
+						<li>Purpose: To decrement the current calendar month.</li>
+					</ul>
+					<li>nextMonthBtn_Click(the object generating the event, and the event args):</li>
+					<ul>
+						<li>Purpose: To increment the current calendar month.</li>
+					</ul>
+					<li>addEmployeeBtn_Click(the object generating the event, and the event args)</li>
+					<ul>
+						<li>Purpose: To initialize a NewEmployee form.</li>
+					</ul>
+					<li>thisDayBtn_Click(the object generating the event, and the event args):</li>
+					<ul>
+						<li>Purpose: To display the Day form for the given day.</li>
+					</ul>
+				</ul>
+			</ul>
+		</ul>
+		
+		<span class="sd_list_titles">Day Form</span>
+		<ul class="sd_list">
+			<li>Day Form: Represents a given day and its associated tasks in a form.</li>
+			<ul>
+				<li>Data Members:</li>
+				<ul>
+					<li>Date(string)</li>
+					<li>Tasks(array(Task))</li>
+					<li>numberOfTasks(int)</li>
+				</ul>
+				<li>Methods:</li>
+				<ul>
+					<li>ParameterizedConstructor(DateTime _date, array(Tasks)  _tasks, int _numberOfTasks)</li>
+					<ul>
+						<li>Purpose: To set the data members for the given day.</li>
+					</ul>
+					<li>getTasks():</li>
+					<ul>
+						<li>Purpose: To return the total number of tasks for the given day.</li>
+						<li>Return: tasks.length() in the form of an int.</li>
+					</ul>
+					<li>addTask(Task _task):</li>
+					<ul>
+						<li>Purpose: To add a task object to the array and call the arrangeTasks().</li>
+					</ul>
+					<li>arrangeTasks():</li>
+					<ul>
+						<li>Purpose: To get the array of tasks for a given day, and arrange them in their order or precendence.</li>
+					</ul>
+				</ul>
+				<li>Event Handlers:</li>
+				<ul>
+					<li>addBtn_Click(the object generating the event, and the event args)</li>
+					<ul>
+						<li>Purpose: To initialize a Task form.</li>
+					</ul>
+					<li>okayBtn_Click(the object generating the event, and the event args)</li>
+					<ul>
+						<li>Purpose: To close the form.</li>
+					</ul>
+					<li>deleteBtn_Click(the object generating the event, and the event args)</li>
+					<ul>
+						<li>Purpose: To delete the selected task.</li>
+					</ul>
+				</ul>
+			</ul>
+		</ul>
+		
+		<span class="sd_list_titles">NewEmployee Form</span>
+		<ul class="sd_list">
+			<li>NewEmployee Form: Represents a NewEmployee form.</li>
+			<ul>
+				<li>Event Handlers:</li>
+				<ul>
+					<li>saveBtn_Click(the object generating the events, and the event args)</li>
+					<ul>
+						<li>Purpose: To create an Employee object, call addEmployee(this.Employee), and close the form.</li>
+					</ul>
+				</ul>
+			</ul>
+		</ul>
+		
+		<span class="sd_list_titles">Task Form</span>
+		<ul class="sd_list">
+			<li>Task Form: Represents a new task form.</li>
+			<ul>
+				<li>Event Handlers:</li>
+				<ul>
+					<li>saveBtn_Click(the object generating the event, and the event args)</li>
+					<ul>
+						<li>Purpose: To call the parameterized constructor, call addTask(this.Task), and close the form.</li>
+					</ul>
+					<li>cancelBtn_Click(the object generating the event, and the event args)</li>
+					<ul>
+						<li>Purpose: To close the form.</li>
+					</ul>
+				</ul>
+			</ul>
+		</ul>
+		
+	</div>
+			
+	</body> <!-- **************************************************************** -->
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!-- Name: James LoForti 
+	 UVID: 10675175
+     Course: Web Programming 1
+     Instructor: Dr. Brian Durney
+     Date: 12/11/2015
+     Final Project
+
+	 I declare that the following code was written by me unless otherwise stated. 
+	 I understand that copying source code from any other source constitutes cheating, 
+	 and that I will receive a zero on this project if I am found in violation of this policy.
+	 
+	 UVU Image Disclaimer: This project will eventually be used internally at a UVU dept.
+	 Because this material will never be published, it is not required by the university 
+	 to go through the official approval process.
+     *************************************************************************** -->
+
+	<head> <!-- meta data -->
+		<meta charset="UTF-8"></meta>
+		<title>Game Grid Preview</title>
+		<meta name="James LoForti" content="Game Grid"></meta>
+		<link rel="stylesheet" href="original_grid.css"></link>
+		<style>
+			body {background-color:#425563}
+		</style>
+	</head>
+
+	<body> <!-- **************************************************************** -->
+	
+	<!-- Icon Disclaimer: Unless otherwise stated, all icons used were generated at customizr.net.  
+	 As a member, I hold a commercial license which allows me to generate and use icons
+	 on my own websites. -->
+	
+	<div class="header">
+		<span id="prev_arrow_header">Last Month</span>
+		<img id="prev_arrow" src="Images/previous_arrow.png" alt="Previous Month" style="width:60px;height:60px;"></img>
+	
+		<span id="next_arrow_header">Next Month</span>
+		<img id="next_arrow" src="Images/next_arrow.png" alt="Next Month" style="width:60px;height:60px;"></img>
+	
+		<span class="title">
+			<h1>
+				<img id="left_willy" src="Images/wolverine_head.png" alt="Wolverine Head" style="width:100px;height:90px;"></img>
+				<img id="right_willy" src="Images/wolverine_head.png" alt="Wolverine Head" style="width:100px;height:90px;"></img>
+				September 2015
+			</h1>
+		</span>
+	</div>
+	
+	<br>
+	<br>
+	
+	<span id="employee_key">
+		<span id="employee_key_header_bckgrd"><p id="employee_key_header">Employees</p></span>
+		<ul class="employee_list">
+			<li>Jimmy (blue)</li>
+			<li>Miriam (green)</li>
+			<li>Mitch (purple)</li>
+			<li>Whitney (black)</li>
+			<li>Michael (red)</li>
+			<li>Autumn (orange)</li>
+		</ul>
+		<br>
+		<span id="add_employee_btn"><p id="add_employee_btn_text">Add</p></span>
+	</span>
+	
+	<span id="new_employee_form">
+		<span id="new_employee_form_header_bckgrd"><p id="new_employee_form_header">New Employee</p></span>
+		<ul id="new_employee_list">
+			<li>Name:<span class="new_employee_textbox"></span></li>
+			<li>Color:<span class="new_employee_textbox"></span></li>
+		</ul>
+		<span id="cancel_btn"><p id="cancel_btn_text">Cancel</p></span>
+		<span id="save_btn"><p id="save_btn_text">Save</p></span>
+	</span>
+	
+	<!-- Main Calendar -->
+	<table class="calendar">
+	  <tr>
+		<th class="table_headers">Sunday</th>
+		<th class="table_headers">Monday</th>		
+		<th class="table_headers">Tuesday</th>
+		<th class="table_headers">Wednesday</th>
+		<th class="table_headers">Thursday</th>
+		<th class="table_headers">Friday</th>
+		<th class="table_headers">Saturday</th>
+	  </tr>
+	  <tr class="days">
+		<td><span class="date">30</span><span class="daily_task"></span></td>
+		<td><span class="date">31</span><span class="daily_task"></span></td>		
+		<td><span class="date">1</span><span class="daily_task">Tasks: 2</span></td>
+		<td><span class="date">2</span><span class="daily_task">Tasks: 5</span></td>
+		<td><span class="date">3</span><span class="daily_task">Tasks: 3</span></td>
+		<td><span class="date">4</span><span class="daily_task">Tasks: 1</span></td>
+		<td><span class="date">5</span><span class="daily_task"></span></td>
+	  </tr>
+	  <tr>
+		<td><span class="date">6</span><span class="daily_task"></span></td>
+		<td><span class="date">7</span><span class="daily_task">Tasks: 6</span></td>
+		<td><span class="date">8</span><span class="daily_task">Tasks: 3</span></td>
+		<td bgcolor="#FFF0E0"><span class="date" >9</span><span class="daily_task">Tasks: 4</span></td>
+		<td><span class="date">10</span><span class="daily_task"></span></td>
+		<td><span class="date">11</span><span class="daily_task"></span></td>
+		<td><span class="date">12</span><span class="daily_task"></span></td>
+	  </tr>
+	  <tr>
+		<td><span class="date">13</span><span class="daily_task"></span></td>
+		<td><span class="date">14</span><span class="daily_task"></span></td>
+		<td><span class="date">15</span><span class="daily_task"></span></td>
+		<td><span class="date">16</span><span class="daily_task"></span></td>
+		<td><span class="date">17</span><span class="daily_task"></span></td>
+		<td><span class="date">18</span><span class="daily_task"></span></td>
+		<td><span class="date">19</span><span class="daily_task"></span></td>
+	  </tr>
+	  <tr>
+		<td><span class="date">20</span><span class="daily_task"></span></td>
+		<td><span class="date">21</span><span class="daily_task"></span></td>
+		<td><span class="date">22</span><span class="daily_task"></span></td>
+		<td><span class="date">23</span><span class="daily_task"></span></td>
+		<td><span class="date">24</span><span class="daily_task"></span></td>
+		<td><span class="date">25</span><span class="daily_task"></span></td>
+		<td><span class="date">26</span><span class="daily_task"></span></td>
+	  </tr>
+	  <tr>
+		<td><span class="date">27</span><span class="daily_task"></span></td>
+		<td><span class="date">28</span><span class="daily_task"></span></td>
+		<td><span class="date">29</span><span class="daily_task"></span></td>
+		<td><span class="date">30</span><span class="daily_task"></span></td> 
+		<td><span class="date">1</span><span class="daily_task"></span></td>
+		<td><span class="date">2</span><span class="daily_task"></span></td>
+		<td><span class="date">3</span><span class="daily_task"></span></td>
+	  </tr>
+	  <tr>
+		<td><span class="date">4</span><span class="daily_task"></span></td>
+		<td><span class="date">5</span><span class="daily_task"></span></td>
+		<td><span class="date">6</span><span class="daily_task"></span></td>
+		<td><span class="date">7</span><span class="daily_task"></span></td>
+		<td><span class="date">8</span><span class="daily_task"></span></td>
+		<td><span class="date">9</span><span class="daily_task"></span></td>
+		<td><span class="date">10</span><span class="daily_task"></span></td>
+	  </tr>
+	</table>		
+	
+	<div id="task_form" class="internal_forms">
+		<span id="task_header">Wednesday, Sept. 9th</span>
+		<img id="add_btn" src="Images/add.png" alt="Add Task"></img>
+		<ul id="task_list">
+			<li style="color:blue">Clean Bowling Balls</li>
+				<ul class="task_sub_list">
+					<li style="color:blue">Instr: Run each ball through ball cleaner</li>
+					<li style="color:blue">ETC: 4 hours</li>
+				</ul>
+			<li style="color:green">Prep Event Refreshments
+				<ul class="task_sub_list">
+					<li style="color:green">Instr: Put up tables & prep food</li>
+					<li style="color:green">ETC: 1 hour</li>
+				</ul>
+			</li>
+			<li style="color:red">Update Gaming Consoles
+				<ul class="task_sub_list">
+					<li style="color:red">Instr: Run system updates on XBOX Ones</li>
+					<li style="color:red">ETC: 1.5 hours</li>
+				</ul>
+			</li>
+			<li style="color:purple">Oil Lanes
+				<ul class="task_sub_list">
+					<li style="color:purple">Instr: Oil all 6 lanes w/ lane machine</li>
+					<li style="color:purple">ETC: 30 mins</li>
+				</ul>
+			</li>
+		</ul>
+		<img id="delete_btn" src="Images/delete.png" alt="Delete Task"></img>
+		<img class="ok_btn" src="Images/ok.png" alt="Okay" style="margin:25px 15px 10px 10px"></img>
+	</div>
+	
+	<div id="new_form" class="internal_forms">
+		<span id="new_header">New Task</span>
+		<ul id="new_list">
+			<li style="margin:0px 0px 15px 0px">Employee:<div class="text_box"></div></li>
+			<li style="margin:0px 0px 15px 0px">Title:<div class="text_box"></div></li>
+			<li style="margin:0px 0px 15px 0px">ETC:<div class="text_box"></div></li>
+			<li style="margin:0px 0px 15px 0px">Precedence:<div class="text_box"></div></li>
+			<li style="margin:0px 0px 15px 0px">Instructions:<div class="text_box"></div></li>
+		</ul>
+		<img class="ok_btn" src="Images/ok.png" alt="Okay"></img>
+	</div>
+
+	</body> <!-- **************************************************************** -->
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!-- Name: James LoForti 
+	 UVID: 10675175
+     Course: Web Programming 1
+     Instructor: Dr. Brian Durney
+     Date: 12/11/2015
+     Final Project
+
+	 I declare that the following code was written by me unless otherwise stated. 
+	 I understand that copying source code from any other source constitutes cheating, 
+	 and that I will receive a zero on this project if I am found in violation of this policy.
+	 
+	 UVU Image Disclaimer: This project will eventually be used internally at a UVU dept.
+	 Because this material will never be published, it is not required by the university 
+	 to go through the official approval process.
+     *************************************************************************** -->
+
+	<head> <!-- meta data -->
+		<meta charset="UTF-8"></meta>
+		<title>Game Grid</title>
+		<meta name="James LoForti" content="Calendar Grid"></meta>
+		<link rel="stylesheet" href="project.css"></link>
+		<style>
+			body {background-color:#425563}
+		</style>
+	</head>
+	
+	<!-- ****************************************** BODY ****************************************** -->
+	<body>
+		
+		<!-- ****************************************** HEADER ****************************************** -->
+		<div class="header">
+			<span id="prev_arrow_header">Last Month</span>
+			<img id="prev_arrow" src="Images/previous_arrow.png" alt="Previous Month - customizr.net" onclick="previousMonth()" style="width:60px;height:60px;cursor:pointer"></img>
+		
+			<span id="next_arrow_header">Next Month</span>
+			<img id="next_arrow" src="Images/next_arrow.png" alt="Next Month - customizr.net" onclick="nextMonth()" style="width:60px;height:60px;cursor:pointer"></img>
+		
+			<span class="title">
+				<h1 id="main_calendar_header">
+				</h1>
+			</span>
+		</div>
+		<!-- ****************************************** HEADER ****************************************** -->
+		
+		<br>
+		<br>
+		
+		<audio id="audioDing" src="Audio/ding.wav"></audio>
+		<audio id="audioLaugh" src="Audio/laugh.mp3"></audio>
+		
+		<script type="text/javascript" src="datetimes.js"></script>
+		<script type="text/javascript" src="view.js"></script>
+		<script type="text/javascript" src="model.js"></script>
+		<script type="text/javascript" src="controller.js"></script>
+
+	</body>
+	<!-- ****************************************** BODY ****************************************** -->
+</html>
+
+
+
+
+
+
+
+
